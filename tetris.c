@@ -30,13 +30,13 @@
 
 /* pieces in order: L, J, T, S, Z, I, O  (1 = filled cell) */
 static const char P[NP][CELL][CELL] = {
-    {"...1","111."},  /* L */
-    {"1...","111."},  /* J */
-    {".1..","111."},  /* T */
-    {".11.","11.."},  /* S */
-    {"11..",".11."},  /* Z */
-    {"....","1111"},  /* I */
-    {".11.",".11."}   /* O */
+    {"...1","111.","....","...."},  /* L */
+    {"1...","111.","....","...."},  /* J */
+    {".1..","111.","....","...."},  /* T */
+    {".11.","11..","....","...."},  /* S */
+    {"11..",".11.","....","...."},  /* Z */
+    {"....","1111","....","...."},  /* I */
+    {".11.",".11.","....","...."}   /* O */
 };
 static const char PCHAR[NP] = "LTJSZIO"; /* ASCII char printed for each piece */
 
@@ -79,7 +79,7 @@ static int fits(const char mat[CELL][CELL], int x, int y)
 {
     for (int i = 0; i < CELL; i++)
         for (int j = 0; j < CELL; j++)
-            if (mat[i][j] && occupied(y + i, x + j))
+            if (mat[i][j] != '.' && occupied(y + i, x + j))
                 return 0;
     return 1;
 }
@@ -88,7 +88,7 @@ static void lockPiece(void)
 {
     for (int i = 0; i < CELL; i++)
         for (int j = 0; j < CELL; j++)
-            if (curMat[i][j] && curY + i >= 0 && curY + i < ROWS)
+            if (curMat[i][j] != '.' && curY + i >= 0 && curY + i < ROWS)
                 board[curY + i][curX + j] = PCHAR[curIdx];
 }
 
@@ -230,7 +230,7 @@ static void render(void)
             int i = r - curY, j = c - curX;
             char ch = ' ';
             if (board[r][c]) ch = board[r][c];
-            if (i >= 0 && i < CELL && j >= 0 && j < CELL && curMat[i][j])
+            if (i >= 0 && i < CELL && j >= 0 && j < CELL && curMat[i][j] != '.')
                 ch = PCHAR[curIdx];
             line[1 + c] = ch;
         }
