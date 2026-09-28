@@ -6,7 +6,7 @@ A *(not)* classic style tetris, but with some bugs that I don't want to fix beca
 3. Do this: `./tetris`
 4. Play (or lose immediatly, I wasn't able to beat it)
 ### Moments
-For some reason that I would like to know, all pieces are the same form a 2x4 block. I think this is kind of fun, it makes this game even more unbeatable. But if you manage to beat it, you shall add a video of you beating it. I think this is a good way to show off your skills.
+It works, but the L piece is a bit broken. This is a feature, **NOT A BUG**. If you ever want to commit, **DON'T FIX IT**. This is my style. I think this is kind of fun, it makes this game even more unbeatable. But if you manage to beat it, you shall add a video of you beating it. I think this is a good way to show off your skills.
 ### Controls
 1. Left arrow = move current piece left
 2. Right arrow = move current piece right
@@ -14,7 +14,7 @@ For some reason that I would like to know, all pieces are the same form a 2x4 bl
 4. Down arrow = rotate current piece
 5. Q = exit immediatly
 6. Enter = force drop current piece
-7. Space = start the game (but it starts automatically)
+7. Space = start the game (but it starts automatically)\
 P.s.
 If you want to change the controls, it's fine, maybe this is not convenient for somebody.
 ### Non-linux OSes
